@@ -10,7 +10,7 @@ app.use((req, res, next) => {
 });
 
 app.use((req, res, next) => {
-  console.log("Into my Middleware2 !");
+  res.send("<h1>This is my page header!</h1>");
 });
 
 const server = http.createServer(app);
