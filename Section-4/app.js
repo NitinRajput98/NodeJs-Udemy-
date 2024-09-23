@@ -25,12 +25,13 @@ app.use("/add-product", (req, res, next) => {
   );
 });
 
-app.use("/product", (req, res, next) => {
-  console.log(req.body);
+app.post("/product", (req, res, next) => {
+  console.log(req.body, "In /product path");
   res.redirect("/");
 });
 
 app.use("/", (req, res, next) => {
+  console.log("in / path");
   res.send("<h1>This is my main page!</h1>");
 });
 
