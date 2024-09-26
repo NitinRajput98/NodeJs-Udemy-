@@ -23,6 +23,10 @@ app.use("/favicon.ico", (req, res, next) => {
 app.use(adminRoutes);
 app.use(shopRoutes);
 
+app.use((req, res, next) => {
+  res.status(404).send("<h1>Page Not Found!</h1>");
+});
+
 // app.use("/add-product", (req, res, next) => {
 //   console.log("'/add-product' path handler executed!");
 //   res.send("<h1>Add Product Page!</h1>");
