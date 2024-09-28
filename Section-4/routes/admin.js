@@ -1,5 +1,8 @@
-const express = require("express");
 const path = require("path");
+
+const express = require("express");
+
+const rootDir = require("../utils/path");
 
 const router = express.Router();
 
@@ -7,7 +10,7 @@ const router = express.Router();
 router.get("/add-product", (req, res, next) => {
   console.log(req.url);
   console.log("'/ path handler executed!'");
-  res.sendFile(path.join(__dirname, "../", "views", "add-product.html"));
+  res.sendFile(path.join(rootDir, "views", "add-product.html"));
 });
 
 // /admin/product => post
