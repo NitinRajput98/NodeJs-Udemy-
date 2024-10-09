@@ -10,14 +10,15 @@ const products = [];
 
 // /admin/add-product => get
 router.get("/add-product", (req, res, next) => {
-  res.render("add-product", { pageTitle: "Add Product" });
-  res.sendFile(path.join(rootDir, "views", "add-product.html"));
+  res.render("add-product", {
+    pageTitle: "Add Product",
+    path: "/admin/add-product",
+  });
 });
 
 // /admin/product => post
 router.post("/add-product", (req, res, next) => {
   products.push({ title: req.body.title });
-  console.log("Admin,js", products);
   res.redirect("/");
 });
 
