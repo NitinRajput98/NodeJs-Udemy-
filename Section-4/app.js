@@ -7,9 +7,12 @@ const adminData = require("./routes/admin");
 const shopRoutes = require("./routes/shop");
 const rootDir = require("./utils/path");
 
+const handleHbs = require("express-handlebars");
+
 const app = express();
 
-app.set("view engine", "pug");
+app.engine("handlebars", handleHbs());
+app.set("view engine", "handlebars");
 app.set("views", "views");
 
 app.use(bodyParser.urlencoded({ extended: true }));
