@@ -9,10 +9,11 @@ const routesData = require("./admin");
 const router = express.Router();
 
 router.get("/", (req, res, next) => {
-  res.render("shop.pug", {
+  res.render("shop", {
     prods: routesData.products,
     pageTitle: "Shop",
     path: "/",
+    hasProducts: routesData.products.length > 0,
   });
 });
 
