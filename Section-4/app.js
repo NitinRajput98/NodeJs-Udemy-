@@ -7,15 +7,15 @@ const adminData = require("./routes/admin");
 const shopRoutes = require("./routes/shop");
 const rootDir = require("./utils/path");
 
-const handleHbs = require("express-handlebars");
+// const handleHbs = require("express-handlebars");
 
 const app = express();
 
-app.engine(
-  "handlebars",
-  handleHbs({ layoutsDir: "views/layouts/", defaultLayout: "main-layout" })
-);
-app.set("view engine", "handlebars");
+// app.engine(
+//   "handlebars",
+//   handleHbs({ layoutsDir: "views/layouts/", defaultLayout: "main-layout" })
+// );
+app.set("view engine", "ejs");
 app.set("views", "views");
 
 app.use(bodyParser.urlencoded({ extended: true }));
