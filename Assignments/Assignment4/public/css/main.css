@@ -1,0 +1,9 @@
+main,
+.empty-form,
+.page-heading {
+  text-align: center;
+}
+
+ul {
+  list-style-position: inside;
+}

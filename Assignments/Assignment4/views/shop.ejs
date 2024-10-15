@@ -1,0 +1,25 @@
+<%- include("includes/head.ejs") %>
+<body class="body">
+  <h1 class="page-heading">Input Form</h1>
+  <main>
+    <form method="POST" action="/admin/users">
+      <label for="name">Enter Name</label>
+      <input type="text" id="name" name="userName" />
+      <button type="submit">Add Name</button>
+    </form>
+    <% if (users.length !== 0){ %>
+    <h1>Users List</h1>
+    <ul>
+      <% for (const user of users ){ %>
+      <li><%= user %></li>
+      <% } %>
+    </ul>
+    <% } else{%>
+    <h2>No users are present. Please add some!</h2>
+    <% } %>
+  </main>
+  <form method="POST" action="/admin/empty-list" class="empty-form">
+    <button type="submit">Empty List!</button>
+  </form>
+<%- include("includes/end.ejs") %>
+
